@@ -1,8 +1,8 @@
 Package: QWDAP
 Type: Package
 Title: Quantum Walk-Based Data Analysis and Prediction
-Version: 1.1.7
-Date: 2021-11-25
+Version: 1.1.8
+Date: 2021-12-03
 Authors@R: c(person("Binghuang","Pan",role=c("aut","cre"),
             email = "bright1up@163.com"),
             person("Zhaoyuan","Yu",role="aut",
@@ -27,6 +27,6 @@ LazyDataCompression: xz
 RoxygenNote: 7.1.2
 Depends: R (>= 3.5.0)
 NeedsCompilation: no
-Packaged: 2021-11-25 11:04:56 UTC; admin
+Packaged: 2021-12-03 12:55:02 UTC; admin
 Repository: CRAN
-Date/Publication: 2021-11-25 20:00:02 UTC
+Date/Publication: 2021-12-03 13:10:02 UTC

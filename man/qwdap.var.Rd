@@ -4,15 +4,13 @@
 \alias{qwdap.var}
 \title{Vector Autoregressive Model}
 \usage{
-qwdap.var(in_data, data_range, verbose, plotting)
+qwdap.var(in_data, data_range, plotting)
 }
 \arguments{
 \item{in_data}{a 'QWMS' object, which includes the target series and the
 selected modes which can be obtained from modes selection.}
 
 \item{data_range}{the range of the train samples.}
-
-\item{verbose}{whether to output the result in the console.}
 
 \item{plotting}{whether to plot.}
 }
