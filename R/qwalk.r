@@ -63,7 +63,6 @@ qwdap.qwalk<-function(edges, startindex = 1, lens=100, scals=c(0.01), getfloat=F
   }
 
   qtools.tolerance <- 0.5e-15
-  qwalk.threshold = 0.65
   # qwalk.eigenvalues = NULL
   # qwalk.eigenprojectors = NULL
   
@@ -1473,7 +1472,7 @@ qwdap.qwalk<-function(edges, startindex = 1, lens=100, scals=c(0.01), getfloat=F
       if(!getfloat){
         qwalk.nodes[[i]] <- round(prob*100)
       }else{
-        qwalk.nodes[[i]] <- if ((prob*100) >= 1e-6) prob*100 else 0
+        qwalk.nodes[[i]] <- if ((prob) >= 1e-6) prob else 0
       }
     }
     # qwalk.curTime <- qwalk.curTime + deltatime

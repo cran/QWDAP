@@ -26,10 +26,10 @@ qwdap.predict <- function(in_model, data_range){
   if(in_model$method == 'VAR'){
     res<-VARXpred(in_model$model, newxt = in_model$ctqw[data_range[1]:data_range[2],],
                   hstep = data_range[2]-data_range[1]+1)
-  }else if(in_model$method %in% c("Stepwise Regression", "PCR", "PLSR")){
+  }else if(in_model$method %in% c("Stepwise Regression", "PCR", "PLSR", "PPR")){
     res<-predict(in_model$model, newdata = as.data.frame(in_model$ctqw[data_range[1]:data_range[2],]))
-  }else if(in_model$method == "PPR"){
-    res<-predict(in_model$model)
+  }else{
+    print("This model is not supported.")
   }
   return(res)
 }

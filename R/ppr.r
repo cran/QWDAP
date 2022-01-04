@@ -27,15 +27,15 @@ qwdap.ppr<-function(in_data, data_range, plotting = FALSE){
   # pre combine
   co_data = cbind(in_data$real, in_data$ctqw)
   co_data <- subset(co_data, select = c(colnames(in_data$real), in_data$variate))
-  res<-ppr(co_data[data_range[1]:data_range[2],1],
-           co_data[data_range[1]:data_range[2],-1],nterms = length(in_data$variate))
+  res<-ppr(co_data[data_range[1]:data_range[2],-1],
+           co_data[data_range[1]:data_range[2],1],nterms = length(in_data$variate))
   if(plotting){
     tmp_data = cbind(in_data$real[data_range[1]:data_range[2],],res$fitted.values)
-    colnames(tmp_data)=c("Actual sequence","Simulation sequence")
-    plot(x=c(1:nrow(tmp_data)),y=tmp_data[,1],type = "l",xlab="index",ylab="value",lwd=2)
-    lines(x=c(1:nrow(tmp_data)),y=tmp_data[,2],type = "l",col=2,lwd=2)
-    legend("topleft", colnames(tmp_data),title = "Legend", col = c(1,2),
-           lwd = c(2), bg = "grey95", box.col = NA,
+    colnames(tmp_data)=c("Actual series","Fitted series")
+    plot(x=c(1:nrow(tmp_data)),y=tmp_data[,1],type = "l",xlab="index",ylab="value",lwd=1)
+    lines(x=c(1:nrow(tmp_data)),y=tmp_data[,2],type = "l",col=2,lwd=1)
+    legend("topleft", colnames(tmp_data), col = c(1,2),
+           lwd = c(1), bg = "grey95", box.col = NA,
            cex = 0.8, inset = c(0.02, 0.03), ncol = 1)
   }
   res<-list(real = in_data$real, ctqw = co_data[,-1], index = in_data$index,
