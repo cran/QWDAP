@@ -20,7 +20,7 @@
 #' @examples
 #' data("traffic.qw")
 #' data("trafficflow")
-#' res.sws <- qwdap.sws(trafficflow,traffic.qw,1,"bidirection",TRUE)
+#' res.sws <- qwdap.sws(trafficflow,traffic.qw,1,"bidirection",FALSE)
 qwdap.sws<-function(real,ctqw,index,select_method = c("forward","backward","bidirection"),
                     plotting = FALSE){
   # library(StepReg)
@@ -47,17 +47,21 @@ qwdap.sws<-function(real,ctqw,index,select_method = c("forward","backward","bidi
     real = as.data.frame(real)
   }
   proc.data <- cbind(real[index],as.data.frame(ctqw$ctqw[,index,]))
-  res <- stepwise(proc.data,1,selection = select_method)
+  my_lm = paste(colnames(proc.data)[1],"~",paste(colnames(proc.data)[-1],collapse = " + "))
+  res <- stepwise(formula=as.formula(my_lm),data=proc.data,selection = select_method,select = "AIC")
   if(plotting){
-    plot(res$process["Select"][-1,1],xaxt="n",type="l",lwd=2,col=1,xlab="Parameters",ylab="Index value")
-    axis(side=1,at=res$process["Step"][-1,1],labels = as.vector(res$process["EffectEntered"][-1,1]))
+    selected_vars = as.matrix(res$Process[-1,"AIC"])
+    rownames(selected_vars)=res$Process[-1,"EnteredEffect"]
+    plot(selected_vars,xaxt="n",type="l",lwd=2,col=1,xlab="Parameters",ylab="Index value")
+    axis(side=1,at=res$Process[-1,"Step"],labels = as.vector(res$Process[-1,"EnteredEffect"]))
   }
   # if(p_reshape){
   #   return(list(data_x,res))
   # }else{
   #   return(res)
   # }
-  res<-list(real=as.matrix(real[index]), ctqw=ctqw$ctqw[,index,], index = index, method = select_method, variate = res$variate[-1])
+  res<-list(real=as.matrix(real[index]), ctqw=ctqw$ctqw[,index,], index = index,
+            method = select_method, variate = res$Varaibles[-1], importance = res$Process[-1,"AIC"])
   res<-structure(res,class="QWMS")
   return(res)
 }

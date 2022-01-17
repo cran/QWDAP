@@ -19,7 +19,7 @@
 #' @examples
 #' data("traffic.qw")
 #' data("trafficflow")
-#' res.sws <- qwdap.rrelieff(trafficflow,traffic.qw,1,30,TRUE)
+#' res.rrelieff <- qwdap.rrelieff(trafficflow,traffic.qw,1,30,FALSE)
 #' 
 qwdap.rrelieff<-function(real,ctqw,index,num = -1,plotting = FALSE){
   # library(CORElearn)

@@ -1,4 +1,4 @@
-8f0b54149e201aa4ccdb5f0089d63f39 *DESCRIPTION
+b3f73b4ba40bd7002dd1764247afc367 *DESCRIPTION
 62471db40dbd3b8758c31f6373217c96 *NAMESPACE
 1bfba39c1354739d81a982cf04a02705 *R/eval.r
 5796a1d9864075aea9604ee9cc4803eb *R/pcr.r
@@ -6,9 +6,9 @@
 7a434f50324911a2fb8ec308a0b913b6 *R/ppr.r
 6100407681ddd0cbc3028e280a78934b *R/predict.r
 61a630756b9689f7c573f3e13b7b9be0 *R/qwalk.r
-0f0e6815190ff5d0d44a67fdce79482d *R/rrelieff.r
+23ed623938bdf682322db704a16e6e32 *R/rrelieff.r
 5e2b3affb486baf6a8d75733777fab42 *R/swr.r
-c2234feb79050e856d7ce92d5e64b3ab *R/sws.r
+e549c1b482a0e3510cba0a9ce062d045 *R/sws.r
 2f61151fd0a6a8ddfccb94a707ea7411 *R/var.r
 9410ad623ff63fe3d591a9b7dbd63477 *data/traffic.model.n1.rda
 e264b8000754a2926f31c3a79573ea47 *data/traffic.n1.rda
