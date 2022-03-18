@@ -1,14 +1,14 @@
-b3f73b4ba40bd7002dd1764247afc367 *DESCRIPTION
+da33ac3582731a89e9be0868933f39de *DESCRIPTION
 62471db40dbd3b8758c31f6373217c96 *NAMESPACE
 1bfba39c1354739d81a982cf04a02705 *R/eval.r
 5796a1d9864075aea9604ee9cc4803eb *R/pcr.r
 154a141f798922864c50537daccd81d5 *R/plsr.r
 7a434f50324911a2fb8ec308a0b913b6 *R/ppr.r
 6100407681ddd0cbc3028e280a78934b *R/predict.r
-61a630756b9689f7c573f3e13b7b9be0 *R/qwalk.r
-23ed623938bdf682322db704a16e6e32 *R/rrelieff.r
+db24c2a3ba9d9eb1855032cd71c8335a *R/qwalk.r
+e20f1eed5098a372c800859a9d63826c *R/rrelieff.r
 5e2b3affb486baf6a8d75733777fab42 *R/swr.r
-e549c1b482a0e3510cba0a9ce062d045 *R/sws.r
+0c5aa61594f44fce77d8d7e96f8d3dcb *R/sws.r
 2f61151fd0a6a8ddfccb94a707ea7411 *R/var.r
 9410ad623ff63fe3d591a9b7dbd63477 *data/traffic.model.n1.rda
 e264b8000754a2926f31c3a79573ea47 *data/traffic.n1.rda
@@ -20,7 +20,7 @@ e9956f6d2780f4a0f3ec594e5d5d6247 *man/qwdap.pcr.Rd
 fdfa8e8b0c9b9c67156059ad87936cd3 *man/qwdap.ppr.Rd
 eb9428f35b7c4414310cd01d4f974ad8 *man/qwdap.predict.Rd
 2dd356bc68ab85e375b68893d7e538dd *man/qwdap.qwalk.Rd
-49816682b56efc73e44ac6ccbab5ff93 *man/qwdap.rrelieff.Rd
+de86c8d4f64652d9a280a2b83a48aad9 *man/qwdap.rrelieff.Rd
 749e4e91bc829a1b91d74bd6dae9c368 *man/qwdap.swr.Rd
 83257f998fd960224b5408fdcca08c26 *man/qwdap.sws.Rd
 a3390a4e729d5ad9c1cdc589f6ffafd2 *man/qwdap.var.Rd

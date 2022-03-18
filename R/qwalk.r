@@ -118,7 +118,7 @@ qwdap.qwalk<-function(edges, startindex = 1, lens=100, scals=c(0.01), getfloat=F
   }
   
   dij_edges = dijkstra(edges,startindex)
-  Tag_node = which(dij_edges$dis==max(dij_edges$dis),arr.ind=TRUE)[2]
+  Tag_node = which(dij_edges$dis==max(dij_edges$dis),arr.ind=TRUE)[1,2]
 
   numeric.rep = function (s, v, k=1) {
 

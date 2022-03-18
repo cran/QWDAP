@@ -20,7 +20,7 @@
 #' @examples
 #' data("traffic.qw")
 #' data("trafficflow")
-#' res.sws <- qwdap.sws(trafficflow,traffic.qw,1,"bidirection",FALSE)
+#' res.sws <- qwdap.sws(trafficflow,traffic.qw,1,"bidirection",TRUE)
 qwdap.sws<-function(real,ctqw,index,select_method = c("forward","backward","bidirection"),
                     plotting = FALSE){
   # library(StepReg)
@@ -48,7 +48,7 @@ qwdap.sws<-function(real,ctqw,index,select_method = c("forward","backward","bidi
   }
   proc.data <- cbind(real[index],as.data.frame(ctqw$ctqw[,index,]))
   my_lm = paste(colnames(proc.data)[1],"~",paste(colnames(proc.data)[-1],collapse = " + "))
-  res <- stepwise(formula=as.formula(my_lm),data=proc.data,selection = select_method,select = "AIC")
+  res <- stepwise(formula=as.formula(my_lm),data=proc.data,selection = select_method, select = "AIC")
   if(plotting){
     selected_vars = as.matrix(res$Process[-1,"AIC"])
     rownames(selected_vars)=res$Process[-1,"EnteredEffect"]
