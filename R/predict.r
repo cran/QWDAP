@@ -8,6 +8,7 @@
 #'
 #' @return the predict data.
 #' @import MTS
+#' @importFrom stats predict
 #' @export
 #'
 #' @examples
@@ -15,12 +16,10 @@
 #' res.predict <- qwdap.predict(traffic.model.n1,c(501,720))
 qwdap.predict <- function(in_model, data_range){
   if(class(in_model)!="QWMODEL"){
-    print("The 'in_model' is not a 'QWMODEL' object.")
-    return()
+    stop("The 'in_model' is not a 'QWMODEL' object.")
   }
   if(!is.vector(data_range)||!is.numeric(data_range)||length(data_range)<2||data_range[1]>data_range[2]){
-    print("The 'data_range' is error.")
-    return()
+    stop("The 'data_range' is error.")
   }
   res<-NULL
   if(in_model$method == 'VAR'){
@@ -29,7 +28,7 @@ qwdap.predict <- function(in_model, data_range){
   }else if(in_model$method %in% c("Stepwise Regression", "PCR", "PLSR", "PPR")){
     res<-predict(in_model$model, newdata = as.data.frame(in_model$ctqw[data_range[1]:data_range[2],]))
   }else{
-    print("This model is not supported.")
+    stop("This model is not supported.")
   }
   return(res)
 }

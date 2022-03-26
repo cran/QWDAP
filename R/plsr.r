@@ -10,7 +10,9 @@
 #'
 #' @return a 'QWMODEL' object which includes the information of regression analysis.
 #' @import pls
-#' @export
+#' @importFrom stats as.formula
+#' @importFrom graphics lines legend
+#' @export qwdap.plsr
 #'
 #' @examples
 #' data("traffic.n1")
@@ -19,12 +21,10 @@
 qwdap.plsr<-function(in_data, data_range, plotting = FALSE){
   # library(pls)
   if(class(in_data)!='QWMS'){
-    print("The 'in_data' is not a 'QWMS' object.")
-    return()
+    stop("The 'in_data' is not a 'QWMS' object.")
   }
   if(!is.vector(data_range)||!is.numeric(data_range)||length(data_range)<2){
-    print("The parameter 'data_range' is error.")
-    return()
+    stop("The parameter 'data_range' is error.")
   }
   # pre combine
   co_data = cbind(in_data$real, in_data$ctqw)

@@ -9,7 +9,9 @@
 #' @param plotting whether to plot.
 #'
 #' @return a 'QWMODEL' object which includes the information of regression analysis.
-#' @export
+#' @importFrom stats ppr
+#' @importFrom graphics lines legend
+#' @export qwdap.ppr
 #'
 #' @examples
 #' data("traffic.n1")
@@ -17,12 +19,10 @@
 #' 
 qwdap.ppr<-function(in_data, data_range, plotting = FALSE){
   if(class(in_data)!='QWMS'){
-    print("The 'in_data' is not a 'QWMS' object.")
-    return()
+    stop("The 'in_data' is not a 'QWMS' object.")
   }
   if(!is.vector(data_range)||!is.numeric(data_range)||length(data_range)<2){
-    print("The parameter 'data_range' is error.")
-    return()
+    stop("The parameter 'data_range' is error.")
   }
   # pre combine
   co_data = cbind(in_data$real, in_data$ctqw)

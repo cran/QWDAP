@@ -7,7 +7,7 @@
 #'
 #' @return Three indicators, the Coefficient of Determination, Root Mean Squared Error and
 #' Mean Absolute Error.
-#' @export
+#' @export qwdap.eval
 #'
 #' @examples
 #' set.seed(1)
