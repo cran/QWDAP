@@ -16,7 +16,7 @@ PCR, PLSR, PPR, VAR in this package.}
 the predict data.
 }
 \description{
-Based on the established model, make predict.
+Based on the established model, make predict. The core algorithm of VAR prediction comes from MTS(ver. 1.1.1).
 }
 \examples{
 data(traffic.model.n1)
