@@ -35,7 +35,7 @@ qwdap.sws<-function(real,ctqw,index,select_method = c("forward","backward","bidi
   # if(p_reshape){
   #   data_x = as.data.frame(matrix(data_x[[1]],nrow = length(data_y[[1]]),byrow = FALSE))
   # }
-  if(class(ctqw)!="CTQW"){
+  if(!inherits(ctqw, 'CTQW')){
     stop("The parameter 'ctqw' is not a 'CTQW' object.")
   }
   if(index<1||index>length(real)){
@@ -404,7 +404,7 @@ qwdap.sws<-function(real,ctqw,index,select_method = c("forward","backward","bidi
           } else {
             indicator <- stepvalue$PIC < log10(sle)
           }
-        }else if(class(slcOpt) == 'Rsq' | class(slcOpt) == 'adjRsq'){
+        }else if(inherits(slcOpt, 'Rsq')  | inherits(slcOpt, 'adjRsq') ){
           indicator <- round(stepvalue$PIC,digits=7) > round(slcOpt$bestValue[slcOpt$serial],digits=7)
         }else{
           indicator <- round(stepvalue$PIC,digits=7) <= round(slcOpt$bestValue[slcOpt$serial],digits=7)
@@ -435,7 +435,7 @@ qwdap.sws<-function(real,ctqw,index,select_method = c("forward","backward","bidi
               }
             }
           }
-          if(is.nan(pval)==TRUE && (class(slcOpt)!='Rsq' && class(slcOpt)!='adjRsq')){
+          if(is.nan(pval)==TRUE && (!inherits(slcOpt, 'Rsq') && !inherits(slcOpt, 'adjRsq'))){
             break
           }
           if(addVar == TRUE){

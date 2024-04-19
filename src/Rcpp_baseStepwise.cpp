@@ -40,10 +40,10 @@ double InforCriteria(double SSE,double nY, int p, int n, std::string criteria, d
   }
   return InfCrit;
 }
-//get P value from F value and df1 df2---------------------------start
-double c[11] = { 0.0000677106, -0.0003442342, 0.0015397681, -0.0024467480,
-                 0.0109736958, -0.0002109075, 0.0742379071, 0.0815782188, 0.4118402518,
-                 0.4227843370, 1.0000000000 };
+// get P value from F value and df1 df2---------------------------start
+// double c[11] = { 0.0000677106, -0.0003442342, 0.0015397681, -0.0024467480,
+//                  0.0109736958, -0.0002109075, 0.0742379071, 0.0815782188, 0.4118402518,
+//                  0.4227843370, 1.0000000000 };
 double gammaln(double xx) {
   double x, y, tmp, ser;
   static const double cof[6] = {

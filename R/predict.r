@@ -14,7 +14,7 @@
 #' data(traffic.model.n1)
 #' res.predict <- qwdap.predict(traffic.model.n1,c(501,720))
 qwdap.predict <- function(in_model, data_range){
-  if(class(in_model)!="QWMODEL"){
+  if(!inherits(in_model, 'QWMODEL')){
     stop("The 'in_model' is not a 'QWMODEL' object.")
   }
   if(!is.vector(data_range)||!is.numeric(data_range)||length(data_range)<2||data_range[1]>data_range[2]){

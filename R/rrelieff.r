@@ -24,7 +24,7 @@
 qwdap.rrelieff<-function(real,ctqw,index,num = -1,plotting = FALSE){
   # library(CORElearn)
   # get the data
-  if(class(ctqw)!="CTQW"){
+  if(!inherits(ctqw, 'CTQW')){
     stop("The parameter 'ctqw' is not a 'CTQW' object.")
   }
   if(nrow(real)!=ctqw$lens){

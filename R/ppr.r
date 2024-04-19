@@ -18,7 +18,7 @@
 #' res.ppr <- qwdap.ppr(traffic.n1,c(1,500))
 #' 
 qwdap.ppr<-function(in_data, data_range, plotting = FALSE){
-  if(class(in_data)!='QWMS'){
+  if(!inherits(in_data,'QWMS')){
     stop("The 'in_data' is not a 'QWMS' object.")
   }
   if(!is.vector(data_range)||!is.numeric(data_range)||length(data_range)<2){
