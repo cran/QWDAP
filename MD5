@@ -1,4 +1,4 @@
-e8ef4d42157b060cb390f8fd5e245fa1 *DESCRIPTION
+e03595eb2e35e2e2a570751cfc6b2121 *DESCRIPTION
 51fe2a74ffc684524f659b612c4588e9 *NAMESPACE
 e50633251d3140615c01a9b39e4391c5 *R/RcppExports.R
 6ada628d9e15532ef37ec2c2324b7efc *R/eval.r
@@ -15,6 +15,7 @@ b2e4d91ac6a0e697e7dbedda91a457b2 *R/sws.r
 e264b8000754a2926f31c3a79573ea47 *data/traffic.n1.rda
 11fd13ff0850b586bc779760a22af276 *data/traffic.qw.rda
 f32b6212b64ca1e561b191eaa142240b *data/trafficflow.rda
+bb52454c12eabc7b0972d3bd889a6fc3 *inst/extra/qwdap_paper.pdf
 3dc11163d148041fafba5dd155672de5 *man/qwdap.eval.Rd
 e9956f6d2780f4a0f3ec594e5d5d6247 *man/qwdap.pcr.Rd
 4b50571d4c93dc18e2502f24af3b4916 *man/qwdap.plsr.Rd
